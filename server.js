@@ -5,6 +5,7 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
+var SpotifyStrategy = require('passport-spotify').Strategy;
 
 // Load local libraries.
 var env      = require('./config/environment'),
@@ -16,6 +17,20 @@ var app = express();
 
 // this comes from .env implementation
 require('dotenv').config();
+
+
+//passport stuff
+passport.use(new SpotifyStrategy({
+    clientID: process.env.CID,
+    clientSecret: process.env.CIS,
+    callbackURL: "http://localhost:3000/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    User.findOrCreate({ spotifyId: profile.id }, function (err, user) {
+      return done(err, user);
+    });
+  }
+));
 
 // Configure the application (and set it's title!).
 app.set('title', env.TITLE);
