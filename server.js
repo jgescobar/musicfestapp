@@ -5,7 +5,11 @@ var logger       = require('morgan');
 var bodyParser   = require('body-parser');
 var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
+var passport = require('passport');
+var User = require('./models/user');
+var session = require('express-session');
 var SpotifyStrategy = require('passport-spotify').Strategy;
+var locus = require('locus');
 
 // Load local libraries.
 var env      = require('./config/environment'),
@@ -15,9 +19,28 @@ var env      = require('./config/environment'),
 // Instantiate a server application.
 var app = express();
 
+app.use(cookieParser('notsosecretnowareyou'));
+app.use(session({
+  secret: 'programming is tough',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 // this comes from .env implementation
 require('dotenv').config();
 
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
 
 //passport stuff
 passport.use(new SpotifyStrategy({
@@ -26,11 +49,23 @@ passport.use(new SpotifyStrategy({
     callbackURL: "http://localhost:3000/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ spotifyId: profile.id }, function (err, user) {
-      return done(err, user);
+    User.findOne( { spotifyId: profile.id }, function (err, user) {
+      if (err) return done(err);
+      if (user) {
+        return done(null, user);
+      } else {
+        var newUser = new User({
+          spotifyId: profile.id
+        })
+        newUser.save(function(err) {
+          if (err) return done(err);
+          return done(null, newUser);
+        });
+      }
     });
   }
 ));
+
 
 // Configure the application (and set it's title!).
 app.set('title', env.TITLE);
@@ -49,7 +84,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(cookieParser('notsosecretnowareyou'));
 
 // Routing layers: favicon, static assets, dynamic routes, or 404…
 
