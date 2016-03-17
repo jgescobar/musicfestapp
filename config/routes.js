@@ -6,7 +6,16 @@ var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
 
 // root path:
-router.get('/', pagesController.welcome);
+router.get('/', pagesController.login);
+
+//lineup resource path:
+router.get('/lineup',   pagesController.lineup);
+
+//home resource path:
+router.get('/home',   pagesController.home);
+
+//artist resource path:
+router.get('/artist',   pagesController.artist);
 
 // users resource paths:
 router.get('/users',     usersController.index);
@@ -23,7 +32,8 @@ router.get('/callback',
   passport.authenticate('spotify', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/users');
+    res.redirect('/home');
   });
+
 
 module.exports = router;

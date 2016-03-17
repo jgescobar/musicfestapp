@@ -1,7 +1,26 @@
-var welcome = function(req, res, next) {
-  res.render('pages/welcome');
+var login = function(req, res, next) {
+  res.render('pages/login');
 };
 
-module.exports = {
-  welcome: welcome
+var lineup = function(req, res, next) {
+  res.render('pages/lineup');
 };
+
+var home = function(req, res, next) {
+  res.render('pages/home');
+};
+
+var artist = function(req, res, next) {
+  res.render('pages/artist');
+};
+
+
+
+module.exports = {
+  login: login,
+  lineup: lineup,
+  home: home,
+  artist: artist
+};
+
+
