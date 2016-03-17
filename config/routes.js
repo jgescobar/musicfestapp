@@ -4,6 +4,7 @@ var express = require('express'),
 // Require controllers.
 var pagesController = require('../controllers/pages');
 var usersController = require('../controllers/users');
+var artistsController = require('../controllers/artists');
 
 // root path:
 router.get('/', pagesController.login);
@@ -20,6 +21,9 @@ router.get('/artist',   pagesController.artist);
 // users resource paths:
 router.get('/users',     usersController.index);
 router.get('/users/:id', usersController.show);
+
+// artists resource paths:
+router.get('/artists',    artistsController.index);
 
 router.get('/login',
   passport.authenticate('spotify', { scope: ["user-read-email"] }),
