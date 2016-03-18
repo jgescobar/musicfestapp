@@ -9,13 +9,9 @@ var artistsController = require('../controllers/artists');
 // root path:
 router.get('/', pagesController.login);
 
-//lineup resource path:
+//navigation resource path:
 router.get('/lineup',   pagesController.lineup);
-
-//home resource path:
 router.get('/home',   pagesController.home);
-
-//artist resource path:
 router.get('/artist',   pagesController.artist);
 
 // users resource paths:
@@ -24,6 +20,8 @@ router.get('/users/:id', usersController.show);
 
 // artists resource paths:
 router.get('/artists',    artistsController.index);
+router.post('/artists',   artistsController.create);
+
 
 router.get('/login',
   passport.authenticate('spotify', { scope: ["user-read-email"] }),
