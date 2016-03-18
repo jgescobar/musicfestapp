@@ -2,14 +2,19 @@
 html,
 body {
   box-sizing: border-box;
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 body {
-  font-size: 14px;
+  font-size: 20px;
   padding: 50px;
-}
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+  background-color: rgba(26, 117, 209, 0.2);
 
+}
+ul li {
+    font-family: 'Shadows Into Light', cursive;
+}
 nav ul a {
     transition: background-color .3s;
     font-size: 2rem;
@@ -25,7 +30,7 @@ a {
   font-size: 3.1rem;
 }
 
- .parallax-container {
+.parallax-container {
       margin: 10px;
       height: 400px;
       box-shadow: 3px 3px 29px 2px;
@@ -33,13 +38,18 @@ a {
 
 a:hover { color: grey;
 }
-
-#artistbutton {
-  float: right;
+.btn, .btn-large {
+    text-decoration: none;
+    color: #444;
+    background-color: #26a69a;
+    text-align: center;
+    margin-top: 6px;
+    font-size: xx-large;
+    letter-spacing: .5px;
 }
 
 #line-up img {
-  width: 300px;
+  width: 200px;
 }
 
 nav .brand-logo   {
