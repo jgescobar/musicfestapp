@@ -2,14 +2,23 @@
 html,
 body {
   box-sizing: border-box;
-  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 body {
-  font-size: 14px;
-  padding: 50px;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Shadows Into Light', cursive;
+  background-color: rgba(84, 84, 84, 1);
 }
 
+img {
+  width: 650px;
+}
+
+ul li {
+    font-family: 'Shadows Into Light', cursive;
+}
 nav ul a {
     transition: background-color .3s;
     font-size: 2rem;
@@ -25,21 +34,29 @@ a {
   font-size: 3.1rem;
 }
 
- .parallax-container {
+.parallax-container {
       margin: 10px;
       height: 400px;
       box-shadow: 3px 3px 29px 2px;
     }
 
-a:hover { color: grey;
+a:hover {
+  color: grey;
 }
 
-#artistbutton {
-  float: right;
+.btn, .btn-large {
+    text-decoration: none;
+    color: #444;
+    background-color: #26a69a;
+    text-align: center;
+    margin-top: 6px;
+    font-size: xx-large;
+    letter-spacing: .5px;
 }
 
 #line-up img {
-  width: 300px;
+  width: 190px;
+  height: 175px;
 }
 
 nav .brand-logo   {
@@ -53,6 +70,12 @@ nav .brand-logo   {
     font-family: 'Shadows Into Light', cursive;
 
 }
+.white {
+    background-color: rgba(188,251,177,0.8) !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 15px;
+}
 
 .parallax {
     position: absolute;
@@ -64,14 +87,14 @@ nav .brand-logo   {
 }
 
 .graffiti {
-    padding: 15px;
-    top: 2px;
+    padding: 2px;
+    top: 141px;
     border: none;
-    width: 350px;
-    height: 94px;
+    width: 146px;
+    height: 43px;
     position: absolute;
     text-align: center;
-    left: 273px;
+    left: 300px;
     font-size: 26px;
     box-shadow: 0px 0px 24px 9px beige;
     font-family: 'Shadows Into Light', cursive;

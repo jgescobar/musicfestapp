@@ -9,10 +9,10 @@ $("#search-artist").submit(function(event) {
     dataType: "json"
   }).done(function(res) {
       res.artists.items.forEach(function(artist) {
-       $("#artist-list").append('<li> <a href="#" class="add-artist" id="'+ artist.id +'">' + artist.name + '</a></li>')
+       $("#artist-list").append('<li><a href="#" class="add-artist" id="'+ artist.id +'">' + artist.name + '</a></li>')
     })
       $(".add-artist").click(function(event) {
-        var id = $( this ).attr("id")
+        var id = $(this).attr("id")
         console.log(id);
         $.ajax({
           method: "POST",
@@ -23,7 +23,6 @@ $("#search-artist").submit(function(event) {
           console.log(res);
         })
       });
-      console.log(res)
     })
 });
 
