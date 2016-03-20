@@ -6,12 +6,16 @@ body {
 
 body {
   font-size: 20px;
-  padding: 50px;
+  padding: 10px;
   text-align: center;
   font-family: 'Shadows Into Light', cursive;
-  background-color: rgba(26, 117, 209, 0.2);
-
+  background-color: rgba(84, 84, 84, 1);
 }
+
+img {
+  width: 650px;
+}
+
 ul li {
     font-family: 'Shadows Into Light', cursive;
 }
@@ -36,8 +40,10 @@ a {
       box-shadow: 3px 3px 29px 2px;
     }
 
-a:hover { color: grey;
+a:hover {
+  color: grey;
 }
+
 .btn, .btn-large {
     text-decoration: none;
     color: #444;
@@ -49,7 +55,8 @@ a:hover { color: grey;
 }
 
 #line-up img {
-  width: 200px;
+  width: 190px;
+  height: 175px;
 }
 
 nav .brand-logo   {
@@ -63,6 +70,12 @@ nav .brand-logo   {
     font-family: 'Shadows Into Light', cursive;
 
 }
+.white {
+    background-color: rgba(188,251,177,0.8) !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 15px;
+}
 
 .parallax {
     position: absolute;
@@ -74,14 +87,14 @@ nav .brand-logo   {
 }
 
 .graffiti {
-    padding: 15px;
-    top: 2px;
+    padding: 2px;
+    top: 141px;
     border: none;
-    width: 350px;
-    height: 94px;
+    width: 146px;
+    height: 43px;
     position: absolute;
     text-align: center;
-    left: 273px;
+    left: 300px;
     font-size: 26px;
     box-shadow: 0px 0px 24px 9px beige;
     font-family: 'Shadows Into Light', cursive;
