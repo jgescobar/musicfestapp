@@ -46,7 +46,7 @@ passport.deserializeUser(function(id, done) {
 passport.use(new SpotifyStrategy({
     clientID: process.env.CID,
     clientSecret: process.env.CIS,
-    callbackURL: "http://localhost:3000/callback"
+    callbackURL: "https://aqueous-spire-17304.herokuapp.com/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOne( { spotifyId: profile.id }, function (err, user) {
