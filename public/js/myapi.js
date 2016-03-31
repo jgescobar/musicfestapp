@@ -5,6 +5,6 @@ $.ajax({
 }).done(function(res) {
   console.log("get ajax", res)
   res.artists.forEach(function(artist) {
-    $('#line-up').append('' + artist.name + '<br><img src="' + artist.imgUrl +'"></br>')
+    $('#line-up').append('<div class="new">' + artist.name  +'<img src="' + artist.imgUrl + '">' + '</div>')
   })
 })

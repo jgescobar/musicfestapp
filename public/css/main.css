@@ -45,6 +45,7 @@ a:hover {
 }
 
 .btn, .btn-large {
+  margin: 19px;
     text-decoration: none;
     color: #444;
     background-color: #26a69a;
@@ -100,4 +101,12 @@ nav .brand-logo   {
     font-family: 'Shadows Into Light', cursive;
     background-color: rgba(26, 117, 209, 0.2);
     color: palegreen;
+}
+.new {
+margin: 6px;
+    width: 200px;
+    display: inline-table;
+    height: 200px;
+    border: 3px solid burlywood;
+    padding: 12px;
 }

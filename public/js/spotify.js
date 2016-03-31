@@ -9,7 +9,9 @@ $("#search-artist").submit(function(event) {
     dataType: "json"
   }).done(function(res) {
       res.artists.items.forEach(function(artist) {
-       $("#artist-list").append('<li><a href="/lineup" class="add-artist" id="'+ artist.id +'">' + artist.name + '</a></li>')
+       $("#artist-list")
+       .append(
+        '<li><a href="/lineup" class="add-artist" id="'+ artist.id +'">' + artist.name + '</a></li>')
     })
       $(".add-artist").click(function(event) {
         var id = $(this).attr("id")
