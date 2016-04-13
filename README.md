@@ -6,13 +6,6 @@
 My third project consisted of using the MEN stack development technologies. With a non relational database of Mongodb, I was able to come up with an application that incorporated the Spotify API to allow specific data obtained from Spotify to be used within my own application. 
 
 
-
-##ERD
-
-This is where my ERD will go 
-
-
-
 ## OAUTH 
 I used Passport and Spotify OAuth to launch my login in with Spotify authentication. 
 
